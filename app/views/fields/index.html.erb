@@ -1,0 +1,10 @@
+
+<h1>Take Me Out To The Ballgame! </h1>
+	<ul>
+	<% @fields.each do |s| %>
+		<li>
+		<%= s.name %>
+		<%= link_to "Visit Stadium", field_path(s) %>
+		</li>
+	<% end %>
+	</ul>
