@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   get 'fields/' => "fields#index"
   get 'fields/new' => "fields#new", as: :new_field
-  post 'fields/create' => "fields#create"
+  post 'fields/' => "fields#create"
   get 'fields/:id' => "fields#show", as: :field
   get 'fields/:id/edit' => "fields#edit", as: :edit_field
-  patch 'fields/id' => "fields#update"
+  patch 'fields/:id' => "fields#update"
   delete 'fields/:id' => "fields#destroy"
 
 
