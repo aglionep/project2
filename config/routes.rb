@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get "users/new" => "users#new"
   post "users" => "users#create"
 
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+
 #  fields GET    /fields(.:format)          fields#index
 #            POST   /fields(.:format)          fields#create
 #  new_field GET    /fields/new(.:format)      fields#new
