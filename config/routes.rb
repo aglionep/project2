@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   delete 'fields/:id' => "fields#destroy"
 
 
+  get "users" => "users#index"
+  get "users/new" => "users#new"
+  post "users" => "users#create"
 
 #  fields GET    /fields(.:format)          fields#index
 #            POST   /fields(.:format)          fields#create
