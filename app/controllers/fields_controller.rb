@@ -21,16 +21,27 @@ class FieldsController < ApplicationController
   end
 
   def edit
+    @field = Field.find(params[:id])
   end
 
   def update
+    @field = Field.find(params[:id])
+    if @field.update_attributes(field_params)
+        redirect_to fields_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-  end
+    @field = Field.find(params[:id])
+    @field.destroy
+      redirect_to fields_path
 
-  private 
+  end
+end
+
+private 
     def field_params
       params.require(:field).permit(:name, :team, :league, :address)
     end
-end
