@@ -37,7 +37,6 @@ class FieldsController < ApplicationController
     @field = Field.find(params[:id])
     @field.destroy
       redirect_to fields_path
-
   end
 end
 
