@@ -1,17 +1,25 @@
 Rails.application.routes.draw do
+  # 
+  # resources :fields
 
-  resources :fields
+  root 'fields#index'
+
+  get 'fields/' => "fields#index"
+  get 'fields/new' => "fields#new", as: :new_field
+  post 'fields/' => "fields#create"
+  get 'fields/:id' => "fields#show", as: :field
+  get 'fields/:id/edit' => "fields#edit", as: :edit_field
+  patch 'fields/:id' => "fields#update"
+  delete 'fields/:id' => "fields#destroy"
 
 
-  # get 'fields/' 
-  # get 'fields/new'
-  # post 'fields/create'
-  # get 'fields/edit'
-  # patch 'fields/update'
-  # get 'fields/:id'
-  # delete 'fields/destroy'
+  get "users" => "users#index"
+  get "users/new" => "users#new"
+  post "users" => "users#create"
 
-
+  get "/login" => "sessions#new"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
 
 #  fields GET    /fields(.:format)          fields#index
 #            POST   /fields(.:format)          fields#create
@@ -24,7 +32,33 @@ Rails.application.routes.draw do
 
 
 
+  # get 'users/index'
 
+  # get 'users/show'
+
+  # get 'users/new'
+
+  # get 'users/create'
+
+  # get 'users/edit'
+
+  # get 'users/update'
+
+  # get 'users/destroy'
+
+  # get 'reviews/index'
+
+  # get 'reviews/show'
+
+  # get 'reviews/new'
+
+  # get 'reviews/create'
+
+  # get 'reviews/edit'
+
+  # get 'reviews/update'
+
+  # get 'reviews/destroy'
 
 
   # You can have the root of your site routed with "root"

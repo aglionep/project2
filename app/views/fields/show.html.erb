@@ -6,4 +6,8 @@
 
 <%= link_to "Back to index", fields_path %>
 
+<%= link_to "Update Field", edit_field_path %>
+
+<%= link_to "Delete Field", field_path, method: :delete, data: {confirm: "Are you sure you want to delete this field"} %>
+
 <%#= link_to "Submit a Review", new_stadium_review_path %>
