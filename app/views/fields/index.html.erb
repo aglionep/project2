@@ -1,10 +1,12 @@
 <h1>Fields of Dreams </h1>
-	<%=link_to "Create Field", new_field_path %>
+	<button class="btn btn-default" type="submit">
+	<%=link_to "Create Field", new_field_path %></button>
 	<ul>
 	<% @fields.each do |s| %>
 		<li>
 		<%= s.name %>
-		<%= link_to "Visit Stadium", field_path(s) %>
+		<button class="btn btn-default btn-sm" type="submit">
+		<%= link_to "Visit Stadium", field_path(s) %></button>
 		</li>
 	<% end %>
 	</ul>
