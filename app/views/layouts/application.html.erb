@@ -7,14 +7,21 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Home", root_path %>
+<!-- <img src="background.jpg" class="img-responsive" alt="Responsive image">
+ -->
+<button class="btn btn-default" type="submit">
+<%= link_to "Home", root_path %></button>
 <% if current_user %>
   Logged in as: <%= current_user.name %> <%= link_to 'Log Out', logout_path, method: :delete %>
 <% else %>
-  <%= link_to 'Log In', login_path %>
-  <%= link_to 'Sign Up', users_new_path %>
+  <button class="btn btn-default" type="submit">
+  <%= link_to 'Log In', login_path %></button>
+  
+  <button class="btn btn-default" type="submit">
+  <%= link_to 'Sign Up', users_new_path %></button>
 <% end %>
 <%= yield %>
 
 </body>
 </html>
+
