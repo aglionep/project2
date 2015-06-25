@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: project2_production
-  username: project2
-  password: <%= ENV['PROJECT2_DATABASE_PASSWORD'] %>
+  username: rails
+  password: <%= ENV['APP_DATABASE_PASSWORD'] %>
