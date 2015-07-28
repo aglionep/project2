@@ -1,9 +1,17 @@
 <h1> <%= @field.name %> </h1> 
 
 
-<p> This field is the home of the <%= @field.team %>, it is in the <%= @field.league %>, it is located at <%= @field.address %>
-</p>
+	<p> This field is the home of the <%= @field.team %>, it is in the <%= @field.league %>, it is located at <%= @field.address %>
+	</p>
 
+<% @field.reviews.each do |f| %>
+	<%= f.comment %> Rating: <%= f.rating %> - posted by <strong> <%= f.user.name %> </strong>
+	<% if f.user == current_user %>
+		<%= link_to 'edit', edit_field_review_path(@field, f) %>
+		<%= link_to 'delete', field_review_path(@field, f), method: :delete %>
+	<% end %>
+	<br>s
+<% end %>
 
 <button class="btn btn-default" type="submit">
 <%= link_to "Back to index", fields_path %></button>
@@ -14,4 +22,3 @@
 <button class="btn btn-default" type="submit">
 <%= link_to "Delete Field", field_path, method: :delete, data: {confirm: "Are you sure you want to delete this field"} %> </button>
 
-<%#= link_to "Submit a Review", new_stadium_review_path %>

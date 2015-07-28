@@ -1,21 +1,25 @@
 Rails.application.routes.draw do
   # 
-  # resources :fields
+  resources :fields do 
+    resources :reviews
+  end
 
+  resources :users
+  
   root 'fields#index'
 
-  get 'fields/' => "fields#index"
-  get 'fields/new' => "fields#new", as: :new_field
-  post 'fields/' => "fields#create"
-  get 'fields/:id' => "fields#show", as: :field
-  get 'fields/:id/edit' => "fields#edit", as: :edit_field
-  patch 'fields/:id' => "fields#update"
-  delete 'fields/:id' => "fields#destroy"
+  # get 'fields/' => "fields#index"
+  # get 'fields/new' => "fields#new", as: :new_field
+  # post 'fields/' => "fields#create"
+  # get 'fields/:id' => "fields#show", as: :field
+  # get 'fields/:id/edit' => "fields#edit", as: :edit_field
+  # patch 'fields/:id' => "fields#update"
+  # delete 'fields/:id' => "fields#destroy"
 
 
-  get "users" => "users#index"
-  get "users/new" => "users#new"
-  post "users" => "users#create"
+  # get "users" => "users#index"
+  # get "users/new" => "users#new"
+  # post "users" => "users#create"
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"

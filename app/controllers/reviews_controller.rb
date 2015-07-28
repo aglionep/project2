@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
 	def index
+		@field = get_field
+		@review = Review.find.all
 	end
 
 
