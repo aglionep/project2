@@ -1,4 +1,16 @@
 <h1> Review for <% @field.name %> has been deleted! </h1>
 
-<div class="field">
-	<%= label :comments %> <br>
+	<div class="field">
+		<%= label :comments %> <br>
+		<%= text_area :comment, size: "50x10"%>
+	</div>
+
+	<div class="rating">
+		<%= label :rating %> <br>
+		<%= text_area :rating %>
+	</div>
+
+	<% end %>
+	<br>
+
+<%= link_to 'Back to the list!', fields_path %>

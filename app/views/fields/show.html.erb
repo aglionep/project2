@@ -1,17 +1,25 @@
-<h1> <%= @field.name %> </h1> 
+<h1> <%= @fields.name %> </h1> 
 
 
-	<p> This field is the home of the <%= @field.team %>, it is in the <%= @field.league %>, it is located at <%= @field.address %>
+	<p> This field is the home of the <%= @fields.team %>, it is in the <%= @fields.league %>, it is located at <%= @fields.address %>
 	</p>
 
-<% @field.reviews.each do |f| %>
-	<%= f.comment %> Rating: <%= f.rating %> - posted by <strong> <%= f.user.name %> </strong>
+<% @fields.reviews.each do |f| %>
+	<%= f.comments %> Rating: <%= f.rating %> - posted by <strong> <%= f.user.name %> </strong>
 	<% if f.user == current_user %>
-		<%= link_to 'edit', edit_field_review_path(@field, f) %>
-		<%= link_to 'delete', field_review_path(@field, f), method: :delete %>
+		<%= link_to 'edit', edit_field_review_path(@fields, f) %>
+		<%= link_to 'delete', field_review_path(@fields, f), method: :delete %>
 	<% end %>
-	<br>s
+	<br>
 <% end %>
+
+<br>
+
+<%= link_to 'Add a Review!', new_field_review_path(@fields) %>
+
+<br>
+
+<%= link_to 'Back to the List!', fields_path %>
 
 <button class="btn btn-default" type="submit">
 <%= link_to "Back to index", fields_path %></button>
