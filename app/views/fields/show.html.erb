@@ -6,9 +6,12 @@
 
 <% @fields.reviews.each do |f| %>
 	<%= f.comments %> Rating: <%= f.rating %> - posted by <strong> <%= f.user.name %> </strong>
-	<% if f.user == current_user %>
-		<%= link_to 'edit', edit_field_review_path(@fields, f) %>
-		<%= link_to 'delete', field_review_path(@fields, f), method: :delete %>
+	<% if f.user == current_user %> 
+	<br>
+		<button class="btn btn-default" type="submit">
+		<%= link_to 'edit', edit_field_review_path(@fields, f) %> </button>
+		<button class="btn btn-default" type="submit">
+		<%= link_to 'delete', field_review_path(@fields, f), method: :delete %> </button>
 	<% end %>
 	<br>
 <% end %>
@@ -22,8 +25,8 @@
 <%= link_to 'Review Stadium', new_field_review_path(@fields) %> </button>
 
 <!-- <button class="btn btn-default" type="submit">
-<#%= link_to "Update Field", edit_field_path %> </button>
+<%#= link_to "Update Field", edit_field_path %> </button> -->
 
-<button class="btn btn-default" type="submit">
+<!-- <button class="btn btn-default" type="submit">
 <%#= link_to "Delete Field", field_path, method: :delete, data: {confirm: "Are you sure you want to delete this field"} %> </button> -->
 
