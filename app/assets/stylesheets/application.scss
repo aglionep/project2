@@ -3,20 +3,41 @@
 @import url(https://fonts.googleapis.com/css?family=Salsa);
 
 body {
-	background-image: url("background2.jpg");
+	margin-top: 15px;
+	background-image: url("background3.jpg");
 	background-size: cover;
 	background-position: auto;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	font-family: 'Salsa', cursive;
   	font-size: 24px;
-  	color: black;
+  	color: white;
   	float: right;
  }
+ .container {
+ 	margin-top: 25px;	
+}
  .main {
  	color: white;
+ 	position: center;
+ 	margin-bottom: 50px;	
  }
-
-/* h1, p {
- 	color: white;
- }*/
+.actions {
+	font-family: 'Salsa', cursive;
+	color: blue;
+}
+.field, .rating {
+	color: black;
+}
+label {
+	color: white;
+}
+p {
+	margin-right: 400px;
+}
+input {
+	color: blue;
+}
+#review_rating {
+	color: black;
+}
